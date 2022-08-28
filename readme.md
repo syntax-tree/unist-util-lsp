@@ -30,7 +30,7 @@ Convert positional info between [unist][] and [language server protocol][]
 
 ## What is this?
 
-This package is a utility that takes converts between [unist][] and
+This package is a utility that converts positional info between [unist][] and
 [language server protocol][].
 
 ## When should I use this?
