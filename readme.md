@@ -163,7 +163,7 @@ This package is safe.
 *   [`unist`][unist]
     — specification for abstract syntax trees
 *   [Language server protocol](https://microsoft.github.io/language-server-protocol)
-    — protocol to communicating between editors and language servers
+    — protocol to communicate between editors and language servers
 
 ## Contribute
 
