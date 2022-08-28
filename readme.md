@@ -199,7 +199,7 @@ abide by its terms.
 
 [contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
-[support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
 
 [coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
 
