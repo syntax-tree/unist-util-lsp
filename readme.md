@@ -106,7 +106,6 @@ console.log(startPosition)
 const startPoint = toPoint(startPosition)
 
 console.log(startPoint)
-
 ```
 
 …now running `node example.js` yields:
