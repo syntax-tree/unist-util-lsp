@@ -201,6 +201,6 @@ abide by its terms.
 
 [support]: https://github.com/syntax-tree/.github/blob/main/support.md
 
-[coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
 [unist]: https://github.com/syntax-tree/unist
