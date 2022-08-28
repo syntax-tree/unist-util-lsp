@@ -55,7 +55,7 @@ import {
   toPosition,
   fromPoint,
   fromPosition,
-} from "https://esm.sh/unist-lsp@?0"
+} from 'https://esm.sh/unist-lsp@?0'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
@@ -67,7 +67,7 @@ In browsers with [`esm.sh`][esmsh]:
     toPosition,
     fromPoint,
     fromPosition,
-  } from "https://esm.sh/unist-lsp@?0"
+  } from 'https://esm.sh/unist-lsp@?0'
 </script>
 ```
 
