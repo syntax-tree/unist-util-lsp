@@ -1,6 +1,6 @@
 {
-  "name": "unist-lsp",
-  "version": "1.0.0",
+  "name": "unist-util-lsp",
+  "version": "0.0.0",
   "description": "Utility to convert between unist and language server protocol",
   "license": "MIT",
   "keywords": [
@@ -10,8 +10,8 @@
     "lsp",
     "language-server-protocol"
   ],
-  "repository": "syntax-tree/unist-lsp",
-  "bugs": "https://github.com/syntax-tree/unist-lsp/issues",
+  "repository": "syntax-tree/unist-util-lsp",
+  "bugs": "https://github.com/syntax-tree/unist-util-lsp/issues",
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/unified"
