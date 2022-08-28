@@ -35,7 +35,7 @@ This package is a utility that converts positional info between [unist][] and
 
 ## When should I use this?
 
-This project is useful when you want to deal with unist ASTs and a language
+This project is useful when you are dealing with both unist ASTs and a language
 server.
 
 ## Install
