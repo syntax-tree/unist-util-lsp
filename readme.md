@@ -91,12 +91,12 @@ const mdast = fromMarkdown(markdown)
 
 const range = fromPosition(mdast.position)
 
-console.dir(range)
+console.log(range)
 ```
 
 …now running `node example.js` yields:
 
-```html
+```js
 { start: { line: 0, character: 0 }, end: { line: 0, character: 19 } }
 ```
 
@@ -108,7 +108,7 @@ There is no default export.
 
 ### `fromPoint(point)`
 
-Convert a unist point to a language server protocol position.
+Turn a unist point into a language server protocol position.
 
 ### `fromPosition(unistPosition)`
 
@@ -135,12 +135,13 @@ Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
 
+This package is safe.
 ## Related
 
 *   [`unist`][unist]
-    — a specification for abstract syntax trees
+    — specification for abstract syntax trees
 *   [`language server protocol`](https://microsoft.github.io/language-server-protocol)
-    — a protocol for communicating between an editor and a language server
+    — protocol to communicating between editors and language servers
 
 ## Contribute
 
