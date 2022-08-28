@@ -197,7 +197,7 @@ abide by its terms.
 
 [typescript]: https://www.typescriptlang.org
 
-[contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
 [support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
 
