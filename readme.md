@@ -17,9 +17,9 @@ Convert positional info between [unist][] and [language server protocol][]
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`unistPointToLspPosition(point)`](#unistpointtolsppositionpoint)
+    *   [`fromPoint(point)`](#frompointpoint)
     *   [`unist-lsp(position)`](#unist-lspposition)
-    *   [`unistPositionToLspRange(position)`](#unistpositiontolsprangeposition)
+    *   [`fromPosition(position)`](#frompositionposition)
     *   [`lspRangeToUnistPosition(range)`](#lsprangetounistpositionrange)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
@@ -51,10 +51,10 @@ In Deno with [`esm.sh`][esmsh]:
 
 ```js
 import {
-  lspPositionToUnistPoint,
+  toPoint,
   lspRangeToUnistPosition,
-  unistPointToLspPosition,
-  unistPositionToLspRange,
+  fromPoint,
+  fromPosition,
 } from "https://esm.sh/unist-lsp@?0"
 ```
 
@@ -63,10 +63,10 @@ In browsers with [`esm.sh`][esmsh]:
 ```html
 <script type="module">
   import {
-    lspPositionToUnistPoint,
+    toPoint,
     lspRangeToUnistPosition,
-    unistPointToLspPosition,
-    unistPositionToLspRange,
+    fromPoint,
+    fromPosition,
   } from "https://esm.sh/unist-lsp@?0"
 </script>
 ```
@@ -89,7 +89,7 @@ import {fromMarkdown} from 'mdast-util-from-markdown'
 const markdown = String(await fs.readFile('example.md'))
 const mdast = fromMarkdown(markdown)
 
-const range = unistPositionToLspRange(mdast.position)
+const range = fromPosition(mdast.position)
 
 console.dir(range)
 ```
@@ -102,10 +102,10 @@ console.dir(range)
 
 ## API
 
-This package exports the identifiers  `lspPositionToUnistPoint`, `lspRangeToUnistPosition`, `unistPointToLspPosition`, and `unistPositionToLspRange`
+This package exports the identifiers  `toPoint`, `lspRangeToUnistPosition`, `fromPoint`, and `fromPosition`
 There is no default export.
 
-### `unistPointToLspPosition(point)`
+### `fromPoint(point)`
 
 Convert a unist point to a language server protocol position.
 
@@ -113,7 +113,7 @@ Convert a unist point to a language server protocol position.
 
 Convert a language server protocol position to a unist point.
 
-### `unistPositionToLspRange(position)`
+### `fromPosition(position)`
 
 Convert a unist position to a language server protocol range.
 

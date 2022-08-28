@@ -1,6 +1,1 @@
-export {
-  lspPositionToUnistPoint,
-  lspRangeToUnistPosition,
-  unistPointToLspPosition,
-  unistPositionToLspRange
-} from './lib/index.js'
+export {toPoint, toPosition, fromPoint, fromPosition} from './lib/index.js'

@@ -1,30 +1,25 @@
-import {
-  lspPositionToUnistPoint,
-  lspRangeToUnistPosition,
-  unistPointToLspPosition,
-  unistPositionToLspRange
-} from 'unist-lsp'
+import {toPoint, toPosition, fromPoint, fromPosition} from 'unist-lsp'
 import test from 'tape'
 
-test('unistPointToLspPosition', async (t) => {
+test('fromPoint', async (t) => {
   t.deepEqual(
-    unistPointToLspPosition({line: 43, column: 100}),
+    fromPoint({line: 43, column: 100}),
     {line: 42, character: 99},
     'should convert unist points to LSP positions'
   )
 })
 
-test('lspPositionToUnistPoint', async (t) => {
+test('toPoint', async (t) => {
   t.deepEqual(
-    lspPositionToUnistPoint({line: 43, character: 100}),
+    toPoint({line: 43, character: 100}),
     {line: 44, column: 101},
     'should convert LSP positions to unist points'
   )
 })
 
-test('unistPositionToLspRange', async (t) => {
+test('fromPosition', async (t) => {
   t.deepEqual(
-    unistPositionToLspRange({
+    fromPosition({
       start: {line: 1, column: 2},
       end: {line: 3, column: 4}
     }),
@@ -36,9 +31,9 @@ test('unistPositionToLspRange', async (t) => {
   )
 })
 
-test('lspRangeToUnistPosition', async (t) => {
+test('toPosition', async (t) => {
   t.deepEqual(
-    lspRangeToUnistPosition({
+    toPosition({
       start: {line: 0, character: 1},
       end: {line: 2, character: 3}
     }),
