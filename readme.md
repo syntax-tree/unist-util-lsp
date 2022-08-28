@@ -84,20 +84,42 @@ Say we have the following `example.md`:
 ```js
 import fs from 'node:fs/promises'
 import {fromMarkdown} from 'mdast-util-from-markdown'
-
+import {fromPosition, fromPoint, toPosition, toPoint} from 'unist-lsp'
 
 const markdown = String(await fs.readFile('example.md'))
 const mdast = fromMarkdown(markdown)
 
+console.log(mdast.position)
+
 const range = fromPosition(mdast.position)
 
 console.log(range)
+
+const position = toPosition(range)
+
+console.log(range)
+
+const startPosition = fromPoint(mdast.position.start)
+
+console.log(startPosition)
+
+const startPoint = toPoint(startPosition)
+
+console.log(startPoint)
+
 ```
 
 …now running `node example.js` yields:
 
 ```js
-{ start: { line: 0, character: 0 }, end: { line: 0, character: 19 } }
+{
+  start: { line: 1, column: 1, offset: 0 },
+  end: { line: 1, column: 20, offset: 19 }
+}
+{ start: { character: 0, line: 0 }, end: { character: 19, line: 0 } }
+{ start: { character: 0, line: 0 }, end: { character: 19, line: 0 } }
+{ character: 0, line: 0 }
+{ column: 1, line: 1 }
 ```
 
 ## API
@@ -136,6 +158,7 @@ Our projects sometimes work with older versions, but this is not guaranteed.
 ## Security
 
 This package is safe.
+
 ## Related
 
 *   [`unist`][unist]
