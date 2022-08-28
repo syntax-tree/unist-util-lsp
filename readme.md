@@ -82,7 +82,7 @@ Say we have the following `example.md`:
 …and next to it a module `example.js`:
 
 ```js
-import {promises as fs} from 'node:fs'
+import fs from 'node:fs/promises'
 import {fromMarkdown} from 'mdast-util-from-markdown'
 
 
