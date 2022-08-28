@@ -1,4 +1,4 @@
-import {toPoint, toPosition, fromPoint, fromPosition} from 'unist-lsp'
+import {toPoint, toPosition, fromPoint, fromPosition} from 'unist-util-lsp'
 import test from 'tape'
 
 test('fromPoint', async (t) => {

@@ -1,4 +1,4 @@
-# unist-lsp
+# unist-util-lsp
 
 [![Build][build-badge]][build]
 [![Coverage][coverage-badge]][coverage]
@@ -44,7 +44,7 @@ This package is [ESM only][esm].
 In Node.js (version 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
-npm install unist-lsp
+npm install unist-util-lsp
 ```
 
 In Deno with [`esm.sh`][esmsh]:
@@ -55,7 +55,7 @@ import {
   toPosition,
   fromPoint,
   fromPosition,
-} from 'https://esm.sh/unist-lsp@?0'
+} from 'https://esm.sh/unist-util-lsp@?0'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
@@ -67,7 +67,7 @@ In browsers with [`esm.sh`][esmsh]:
     toPosition,
     fromPoint,
     fromPosition,
-  } from 'https://esm.sh/unist-lsp@?0'
+  } from 'https://esm.sh/unist-util-lsp@?0'
 </script>
 ```
 
@@ -84,7 +84,7 @@ Say we have the following `example.md`:
 ```js
 import fs from 'node:fs/promises'
 import {fromMarkdown} from 'mdast-util-from-markdown'
-import {fromPosition, fromPoint, toPosition, toPoint} from 'unist-lsp'
+import {fromPosition, fromPoint, toPosition, toPoint} from 'unist-util-lsp'
 
 const markdown = String(await fs.readFile('example.md'))
 const mdast = fromMarkdown(markdown)
@@ -181,21 +181,21 @@ abide by its terms.
 
 <!-- Definitions -->
 
-[build-badge]: https://github.com/syntax-tree/unist-lsp/workflows/main/badge.svg
+[build-badge]: https://github.com/syntax-tree/unist-util-lsp/workflows/main/badge.svg
 
-[build]: https://github.com/syntax-tree/unist-lsp/actions
+[build]: https://github.com/syntax-tree/unist-util-lsp/actions
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-lsp.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-util-lsp.svg
 
-[coverage]: https://codecov.io/github/syntax-tree/unist-lsp
+[coverage]: https://codecov.io/github/syntax-tree/unist-util-lsp
 
-[downloads-badge]: https://img.shields.io/npm/dm/unist-lsp.svg
+[downloads-badge]: https://img.shields.io/npm/dm/unist-util-lsp.svg
 
-[downloads]: https://www.npmjs.com/package/unist-lsp
+[downloads]: https://www.npmjs.com/package/unist-util-lsp
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/unist-lsp.svg
+[size-badge]: https://img.shields.io/bundlephobia/minzip/unist-util-lsp.svg
 
-[size]: https://bundlephobia.com/result?p=unist-lsp
+[size]: https://bundlephobia.com/result?p=unist-util-lsp
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
