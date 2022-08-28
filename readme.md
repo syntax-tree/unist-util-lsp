@@ -8,7 +8,7 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Utility to convert between [unist][] and  [language server protocol][].
+Convert positional info between [unist][] and [language server protocol][]
 
 ## Contents
 
