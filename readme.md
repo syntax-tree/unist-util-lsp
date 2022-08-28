@@ -18,9 +18,9 @@ Convert positional info between [unist][] and [language server protocol][]
 *   [Use](#use)
 *   [API](#api)
     *   [`fromPoint(point)`](#frompointpoint)
-    *   [`unist-lsp(position)`](#unist-lspposition)
-    *   [`fromPosition(position)`](#frompositionposition)
-    *   [`lspRangeToUnistPosition(range)`](#lsprangetounistpositionrange)
+    *   [`fromPosition(unistPosition)`](#frompositionunistposition)
+    *   [`toPoint(lspPosition)`](#topointlspposition)
+    *   [`toPosition(range)`](#topositionrange)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -52,7 +52,7 @@ In Deno with [`esm.sh`][esmsh]:
 ```js
 import {
   toPoint,
-  lspRangeToUnistPosition,
+  toPosition,
   fromPoint,
   fromPosition,
 } from "https://esm.sh/unist-lsp@?0"
@@ -64,7 +64,7 @@ In browsers with [`esm.sh`][esmsh]:
 <script type="module">
   import {
     toPoint,
-    lspRangeToUnistPosition,
+    toPosition,
     fromPoint,
     fromPosition,
   } from "https://esm.sh/unist-lsp@?0"
@@ -102,22 +102,23 @@ console.dir(range)
 
 ## API
 
-This package exports the identifiers  `toPoint`, `lspRangeToUnistPosition`, `fromPoint`, and `fromPosition`
+This package exports the identifiers  `fromPoint`, `fromPosition`, `toPoint`,
+and `toPosition`.
 There is no default export.
 
 ### `fromPoint(point)`
 
 Convert a unist point to a language server protocol position.
 
-### `unist-lsp(position)`
-
-Convert a language server protocol position to a unist point.
-
-### `fromPosition(position)`
+### `fromPosition(unistPosition)`
 
 Convert a unist position to a language server protocol range.
 
-### `lspRangeToUnistPosition(range)`
+### `toPoint(lspPosition)`
+
+Convert a language server protocol position to a unist point.
+
+### `toPosition(range)`
 
 Convert a language server protocol range to a unist position.
 
