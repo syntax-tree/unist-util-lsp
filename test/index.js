@@ -1,24 +1,25 @@
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {toPoint, toPosition, fromPoint, fromPosition} from 'unist-util-lsp'
-import test from 'tape'
 
-test('fromPoint', async (t) => {
-  t.deepEqual(
+test('fromPoint', async () => {
+  assert.deepEqual(
     fromPoint({line: 43, column: 100}),
     {line: 42, character: 99},
     'should convert unist points to LSP positions'
   )
 })
 
-test('toPoint', async (t) => {
-  t.deepEqual(
+test('toPoint', async () => {
+  assert.deepEqual(
     toPoint({line: 43, character: 100}),
     {line: 44, column: 101},
     'should convert LSP positions to unist points'
   )
 })
 
-test('fromPosition', async (t) => {
-  t.deepEqual(
+test('fromPosition', async () => {
+  assert.deepEqual(
     fromPosition({
       start: {line: 1, column: 2},
       end: {line: 3, column: 4}
@@ -31,8 +32,8 @@ test('fromPosition', async (t) => {
   )
 })
 
-test('toPosition', async (t) => {
-  t.deepEqual(
+test('toPosition', async () => {
+  assert.deepEqual(
     toPosition({
       start: {line: 0, character: 1},
       end: {line: 2, character: 3}
