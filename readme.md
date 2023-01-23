@@ -9,7 +9,7 @@
 [![Chat][chat-badge]][chat]
 
 [unist][] utility to convert positional info between [unist][] and
-[language server protocol][]
+[language server protocol][lsp]
 
 ## Contents
 
@@ -32,7 +32,7 @@
 ## What is this?
 
 This package is a utility that converts positional info between [unist][] and
-[language server protocol][].
+[language server protocol][lsp].
 
 ## When should I use this?
 
@@ -201,7 +201,7 @@ This package is safe.
 
 *   [`unist`][unist]
     — specification for abstract syntax trees
-*   [Language server protocol](https://microsoft.github.io/language-server-protocol)
+*   [Language server protocol][lsp]
     — protocol to communicate between editors and language servers
 
 ## Contribute
@@ -246,7 +246,7 @@ abide by its terms.
 
 [chat]: https://github.com/syntax-tree/unist/discussions
 
-[language server protocol]: https://microsoft.github.io/language-server-protocol
+[lsp]: https://microsoft.github.io/language-server-protocol
 
 [license]: license
 
