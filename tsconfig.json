@@ -2,14 +2,16 @@
   "include": ["**/*.js"],
   "exclude": ["coverage/", "node_modules/"],
   "compilerOptions": {
-    "target": "es2020",
-    "lib": ["es2020"],
-    "module": "node16",
     "checkJs": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "allowSyntheticDefaultImports": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2020"],
+    "module": "node16",
+    "newLine": "lf",
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "target": "es2020"
   }
 }
