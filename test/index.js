@@ -1,6 +1,15 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {toPoint, toPosition, fromPoint, fromPosition} from 'unist-util-lsp'
+import * as mod from '../index.js'
+
+test('core', async () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['fromPoint', 'fromPosition', 'toPoint', 'toPosition'],
+    'should expose the public api'
+  )
+})
 
 test('fromPoint', async () => {
   assert.deepEqual(
