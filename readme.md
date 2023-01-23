@@ -8,7 +8,8 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Convert positional info between [unist][] and [language server protocol][]
+[unist][] utility to convert positional info between [unist][] and
+[language server protocol][]
 
 ## Contents
 
@@ -35,13 +36,13 @@ This package is a utility that converts positional info between [unist][] and
 
 ## When should I use this?
 
-This project is useful when you are dealing with both unist ASTs and a language
-server.
+You can use this package when you are dealing with both unist ASTs and a
+language server.
 
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install unist-util-lsp
@@ -55,7 +56,7 @@ import {
   toPosition,
   fromPoint,
   fromPosition,
-} from 'https://esm.sh/unist-util-lsp@?0'
+} from 'https://esm.sh/unist-util-lsp@?1'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
@@ -67,7 +68,7 @@ In browsers with [`esm.sh`][esmsh]:
     toPosition,
     fromPoint,
     fromPosition,
-  } from 'https://esm.sh/unist-util-lsp@?0'
+  } from 'https://esm.sh/unist-util-lsp@?1'
 </script>
 ```
 
@@ -97,7 +98,7 @@ console.log(range)
 
 const position = toPosition(range)
 
-console.log(range)
+console.log(position)
 
 const startPosition = fromPoint(mdast.position.start)
 
@@ -113,39 +114,77 @@ console.log(startPoint)
 ```js
 {
   start: { line: 1, column: 1, offset: 0 },
-  end: { line: 1, column: 20, offset: 19 }
+  end: { line: 2, column: 1, offset: 20 }
 }
-{ start: { character: 0, line: 0 }, end: { character: 19, line: 0 } }
-{ start: { character: 0, line: 0 }, end: { character: 19, line: 0 } }
+{ start: { character: 0, line: 0 }, end: { character: 0, line: 1 } }
+{ start: { column: 1, line: 1 }, end: { column: 1, line: 2 } }
 { character: 0, line: 0 }
 { column: 1, line: 1 }
 ```
 
 ## API
 
-This package exports the identifiers  `fromPoint`, `fromPosition`, `toPoint`,
-and `toPosition`.
+This package exports the identifiers [`fromPoint`][api-frompoint],
+[`fromPosition`][api-fromposition], [`toPoint`][api-topoint],
+and [`toPosition`][api-toposition].
 There is no default export.
 
 ### `fromPoint(point)`
 
 Turn a unist point into a language server protocol position.
 
+###### Parameters
+
+*   `point` ([`Point`][point])
+    — the unist point to convert
+
+###### Returns
+
+The LSP position ([`LspPosition`][lspposition]).
+
 ### `fromPosition(unistPosition)`
 
-Convert a unist position to a language server protocol range.
+Convert a unist position to an LSP range.
+
+###### Parameters
+
+*   `unistPosition` ([`UnistPosition`][unistposition])
+    — the unist position to convert
+
+###### Returns
+
+The LSP range ([`Range`][range]).
 
 ### `toPoint(lspPosition)`
 
 Convert a language server protocol position to a unist point.
 
+###### Parameters
+
+*   `lspPosition` ([`LspPosition`][lspposition])
+    — the LSP position to convert
+
+###### Returns
+
+The unist point ([`Point`][point]).
+
 ### `toPosition(range)`
 
-Convert a language server protocol range to a unist position.
+Convert an LSP range to a unist position.
+
+###### Parameters
+
+*   `range` ([`Range`][range])
+    — the LSP range to convert
+
+###### Returns
+
+The range converted to a unist position ([`UnistPosition`][unistposition]).
 
 ## Types
 
 This package is fully typed with [TypeScript][].
+It exports no additional types.
 
 ## Compatibility
 
@@ -228,3 +267,19 @@ abide by its terms.
 [coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
 [unist]: https://github.com/syntax-tree/unist
+
+[point]: https://github.com/syntax-tree/unist#point
+
+[unistposition]: https://github.com/syntax-tree/unist#position
+
+[lspposition]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#position
+
+[range]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#range
+
+[api-frompoint]: #frompointpoint
+
+[api-fromposition]: #frompositionunistposition
+
+[api-topoint]: #topointlspposition
+
+[api-toposition]: #topositionrange
