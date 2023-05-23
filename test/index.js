@@ -39,6 +39,45 @@ test('fromPosition', async () => {
     },
     'should convert unist positions to LSP ranges'
   )
+
+  assert.deepEqual(
+    fromPosition({
+      start: {line: 1, column: 2},
+      // @ts-expect-error We test invalid user input here.
+      end: {line: null, column: 4}
+    }),
+    {
+      start: {line: 0, character: 1},
+      end: {line: 0, character: 1}
+    },
+    'should convert unist positions to LSP ranges if end line is null'
+  )
+
+  assert.deepEqual(
+    fromPosition({
+      start: {line: 1, column: 2},
+      // @ts-expect-error We test invalid user input here.
+      end: {line: 3, column: null}
+    }),
+    {
+      start: {line: 0, character: 1},
+      end: {line: 0, character: 1}
+    },
+    'should convert unist positions to LSP ranges if end line is null'
+  )
+
+  assert.deepEqual(
+    fromPosition({
+      start: {line: 1, column: 2},
+      // @ts-expect-error We test invalid user input here.
+      end: null
+    }),
+    {
+      start: {line: 0, character: 1},
+      end: {line: 0, character: 1}
+    },
+    'should convert unist positions to LSP ranges if end line is null'
+  )
 })
 
 test('toPosition', async () => {
