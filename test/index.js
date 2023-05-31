@@ -17,6 +17,19 @@ test('fromPoint', async () => {
     {line: 42, character: 99},
     'should convert unist points to LSP positions'
   )
+
+  assert.deepEqual(
+    fromPoint({line: 0, column: 0}),
+    {line: 0, character: 0},
+    'should convert unist points with zero values'
+  )
+
+  assert.deepEqual(
+    // @ts-expect-error We test invalid user input here.
+    fromPoint({line: null, column: null}),
+    {line: 0, character: 0},
+    'should convert unist points with null values'
+  )
 })
 
 test('toPoint', async () => {
