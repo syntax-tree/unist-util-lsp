@@ -51,24 +51,14 @@ npm install unist-util-lsp
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {
-  toPoint,
-  toPosition,
-  fromPoint,
-  fromPosition,
-} from 'https://esm.sh/unist-util-lsp@?1'
+import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@?1'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {
-    toPoint,
-    toPosition,
-    fromPoint,
-    fromPosition,
-  } from 'https://esm.sh/unist-util-lsp@?1'
+  import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@?1'
 </script>
 ```
 
@@ -85,7 +75,7 @@ Say we have the following `example.md`:
 ```js
 import fs from 'node:fs/promises'
 import {fromMarkdown} from 'mdast-util-from-markdown'
-import {fromPosition, fromPoint, toPosition, toPoint} from 'unist-util-lsp'
+import {fromPoint, fromPosition, toPoint, toPosition} from 'unist-util-lsp'
 
 const markdown = String(await fs.readFile('example.md'))
 const mdast = fromMarkdown(markdown)
@@ -131,7 +121,7 @@ There is no default export.
 
 ### `fromPoint(point)`
 
-Turn a unist point into a language server protocol position.
+Turn a unist point into an LSP position.
 
 ###### Parameters
 
