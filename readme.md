@@ -42,7 +42,7 @@ language server.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+ and 16.0+), install with [npm][]:
+In Node.js (version 16+), install with [npm][]:
 
 ```sh
 npm install unist-util-lsp
@@ -51,14 +51,14 @@ npm install unist-util-lsp
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@?1'
+import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@1'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@?1'
+  import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@1?bundle'
 </script>
 ```
 
@@ -114,9 +114,9 @@ console.log(startPoint)
 
 ## API
 
-This package exports the identifiers [`fromPoint`][api-frompoint],
-[`fromPosition`][api-fromposition], [`toPoint`][api-topoint],
-and [`toPosition`][api-toposition].
+This package exports the identifiers [`fromPoint`][api-from-point],
+[`fromPosition`][api-from-position], [`toPoint`][api-to-point],
+and [`toPosition`][api-to-position].
 There is no default export.
 
 ### `fromPoint(point)`
@@ -130,7 +130,7 @@ Turn a unist point into an LSP position.
 
 ###### Returns
 
-The LSP position ([`LspPosition`][lspposition]).
+The LSP position ([`LspPosition`][lsp-position]).
 
 ### `fromPosition(unistPosition)`
 
@@ -138,7 +138,7 @@ Convert a unist position to an LSP range.
 
 ###### Parameters
 
-*   `unistPosition` ([`UnistPosition`][unistposition])
+*   `unistPosition` ([`UnistPosition`][unist-position])
     — the unist position to convert
 
 ###### Returns
@@ -151,7 +151,7 @@ Convert a language server protocol position to a unist point.
 
 ###### Parameters
 
-*   `lspPosition` ([`LspPosition`][lspposition])
+*   `lspPosition` ([`LspPosition`][lsp-position])
     — the LSP position to convert
 
 ###### Returns
@@ -169,7 +169,7 @@ Convert an LSP range to a unist position.
 
 ###### Returns
 
-The range converted to a unist position ([`UnistPosition`][unistposition]).
+The range converted to a unist position ([`UnistPosition`][unist-position]).
 
 ## Types
 
@@ -178,10 +178,13 @@ It exports no additional types.
 
 ## Compatibility
 
-Projects maintained by the unified collective are compatible with all maintained
+Projects maintained by the unified collective are compatible with maintained
 versions of Node.js.
-As of now, that is Node.js 14.14+ and 16.0+.
-Our projects sometimes work with older versions, but this is not guaranteed.
+
+When we cut a new major release, we drop support for unmaintained versions of
+Node.
+This means we try to keep the current release line, `unist-util-lsp@^2`,
+compatible with Node.js 12.
 
 ## Security
 
@@ -222,9 +225,9 @@ abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/unist-util-lsp
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/unist-util-lsp.svg
+[size-badge]: https://img.shields.io/badge/dynamic/json?label=minzipped%20size&query=$.size.compressedSize&url=https://deno.bundlejs.com/?q=unist-util-lsp
 
-[size]: https://bundlephobia.com/result?p=unist-util-lsp
+[size]: https://bundlejs.com/?q=unist-util-lsp
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -260,16 +263,16 @@ abide by its terms.
 
 [point]: https://github.com/syntax-tree/unist#point
 
-[unistposition]: https://github.com/syntax-tree/unist#position
+[unist-position]: https://github.com/syntax-tree/unist#position
 
-[lspposition]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#position
+[lsp-position]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#position
 
 [range]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#range
 
-[api-frompoint]: #frompointpoint
+[api-from-point]: #frompointpoint
 
-[api-fromposition]: #frompositionunistposition
+[api-from-position]: #frompositionunistposition
 
-[api-topoint]: #topointlspposition
+[api-to-point]: #topointlspposition
 
-[api-toposition]: #topositionrange
+[api-to-position]: #topositionrange
