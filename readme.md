@@ -51,14 +51,14 @@ npm install unist-util-lsp
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@1'
+import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@2'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@1?bundle'
+  import {fromPoint, fromPosition, toPoint, toPosition} from 'https://esm.sh/unist-util-lsp@2?bundle'
 </script>
 ```
 

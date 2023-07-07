@@ -1,6 +1,6 @@
 {
   "name": "unist-util-lsp",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Utility to convert between unist and language server protocol",
   "license": "MIT",
   "keywords": [
