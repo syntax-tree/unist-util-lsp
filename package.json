@@ -29,7 +29,7 @@
     "lib"
   ],
   "dependencies": {
-    "@types/unist": "^2.0.0",
+    "@types/unist": "^3.0.0",
     "vscode-languageserver-types": "^3.0.0"
   },
   "devDependencies": {
