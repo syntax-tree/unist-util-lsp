@@ -1,1 +1,7 @@
-export {toPoint, toPosition, fromPoint, fromPosition} from './lib/index.js'
+export {
+  toPoint,
+  toPosition,
+  fromPlace,
+  fromPoint,
+  fromPosition
+} from './lib/index.js'

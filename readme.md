@@ -22,6 +22,7 @@
     *   [`fromPosition(unistPosition)`](#frompositionunistposition)
     *   [`toPoint(lspPosition)`](#topointlspposition)
     *   [`toPosition(range)`](#topositionrange)
+    *   [`fromPlace(place)`](#fromplaceplace)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -170,6 +171,21 @@ Convert an LSP range to a unist position.
 ###### Returns
 
 The range converted to a unist position ([`UnistPosition`][unist-position]).
+
+### `fromPlace(place)`
+
+Convert a unist point, position, or undefined to an LSP range.
+
+###### Parameters
+
+*   `place` ([UnistPoint][point] | [`UnistPosition`][unist-position] | `undefined`)
+    — the unist point or position to convert.
+    If place is undefined, this returns an empty range at the beginning of the
+    document.
+
+###### Returns
+
+The LSP range ([`Range`][range]).
 
 ## Types
 
