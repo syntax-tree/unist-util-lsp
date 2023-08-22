@@ -1,7 +1,7 @@
 export {
-  toPoint,
-  toPosition,
   fromPlace,
   fromPoint,
-  fromPosition
+  fromPosition,
+  toPoint,
+  toPosition
 } from './lib/index.js'

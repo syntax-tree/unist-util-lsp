@@ -18,11 +18,11 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
+    *   [`fromPlace(place)`](#fromplaceplace)
     *   [`fromPoint(point)`](#frompointpoint)
     *   [`fromPosition(unistPosition)`](#frompositionunistposition)
     *   [`toPoint(lspPosition)`](#topointlspposition)
     *   [`toPosition(range)`](#topositionrange)
-    *   [`fromPlace(place)`](#fromplaceplace)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -76,7 +76,13 @@ Say we have the following `example.md`:
 ```js
 import fs from 'node:fs/promises'
 import {fromMarkdown} from 'mdast-util-from-markdown'
-import {fromPoint, fromPosition, toPoint, toPosition} from 'unist-util-lsp'
+import {
+  fromPlace,
+  fromPoint,
+  fromPosition,
+  toPoint,
+  toPosition
+} from 'unist-util-lsp'
 
 const markdown = String(await fs.readFile('example.md'))
 const mdast = fromMarkdown(markdown)
@@ -98,6 +104,14 @@ console.log(startPosition)
 const startPoint = toPoint(startPosition)
 
 console.log(startPoint)
+
+const fullRange = fromPlace(mdast.position)
+
+console.log(fullRange)
+
+const startRange = fromPlace(mdast.position.start)
+
+console.log(startRange)
 ```
 
 …now running `node example.js` yields:
@@ -115,10 +129,25 @@ console.log(startPoint)
 
 ## API
 
-This package exports the identifiers [`fromPoint`][api-from-point],
-[`fromPosition`][api-from-position], [`toPoint`][api-to-point],
-and [`toPosition`][api-to-position].
+This package exports the identifiers [`fromPlace`][api-from-place],
+[`fromPoint`][api-from-point], [`fromPosition`][api-from-position],
+[`toPoint`][api-to-point], and [`toPosition`][api-to-position].
 There is no default export.
+
+### `fromPlace(place)`
+
+Convert a unist point, position, or undefined to an LSP range.
+
+###### Parameters
+
+*   `place` ([UnistPoint][point] | [`UnistPosition`][unist-position] | `undefined`)
+    — the unist point or position to convert.
+    If place is undefined, this returns an empty range at the beginning of the
+    document.
+
+###### Returns
+
+The LSP range ([`Range`][range]).
 
 ### `fromPoint(point)`
 
@@ -171,21 +200,6 @@ Convert an LSP range to a unist position.
 ###### Returns
 
 The range converted to a unist position ([`UnistPosition`][unist-position]).
-
-### `fromPlace(place)`
-
-Convert a unist point, position, or undefined to an LSP range.
-
-###### Parameters
-
-*   `place` ([UnistPoint][point] | [`UnistPosition`][unist-position] | `undefined`)
-    — the unist point or position to convert.
-    If place is undefined, this returns an empty range at the beginning of the
-    document.
-
-###### Returns
-
-The LSP range ([`Range`][range]).
 
 ## Types
 
@@ -284,6 +298,8 @@ abide by its terms.
 [lsp-position]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#position
 
 [range]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#range
+
+[api-from-place]: #fromplaceplace
 
 [api-from-point]: #frompointpoint
 
