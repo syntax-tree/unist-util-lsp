@@ -125,6 +125,8 @@ console.log(startRange)
 { start: { column: 1, line: 1 }, end: { column: 1, line: 2 } }
 { character: 0, line: 0 }
 { column: 1, line: 1 }
+{ start: { character: 0, line: 0 }, end: { character: 0, line: 1 } }
+{ start: { character: 0, line: 0 }, end: { character: 0, line: 0 } }
 ```
 
 ## API
