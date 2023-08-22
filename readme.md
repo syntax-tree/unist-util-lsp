@@ -143,7 +143,7 @@ Convert a unist point or position to an LSP range.
 ###### Parameters
 
 *   `place` ([UnistPoint][point] | [`UnistPosition`][unist-position])
-    — the unist point or position to convert.
+    — the unist point or position to convert
 
 ###### Returns
 
