@@ -138,14 +138,12 @@ There is no default export.
 
 ### `fromPlace(place)`
 
-Convert a unist point, position, or undefined to an LSP range.
+Convert a unist point or position to an LSP range.
 
 ###### Parameters
 
-*   `place` ([UnistPoint][point] | [`UnistPosition`][unist-position] | `undefined`)
+*   `place` ([UnistPoint][point] | [`UnistPosition`][unist-position])
     — the unist point or position to convert.
-    If place is undefined, this returns an empty range at the beginning of the
-    document.
 
 ###### Returns
 

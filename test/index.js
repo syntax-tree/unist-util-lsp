@@ -22,15 +22,6 @@ test('unist-util-lsp', async function (t) {
 
 test('fromPlace', async function (t) {
   await t.test(
-    'should convert undefined to an empty range at position 0',
-    async function () {
-      assert.deepEqual(fromPlace(undefined), {
-        start: {line: 0, character: 0},
-        end: {line: 0, character: 0}
-      })
-    }
-  )
-  await t.test(
     'should convert unist points to LSP positions',
     async function () {
       assert.deepEqual(fromPlace({line: 43, column: 100}), {
